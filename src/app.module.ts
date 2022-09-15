@@ -7,11 +7,15 @@ import { PokemonModule } from './pokemon/pokemon.module';
 import { join } from 'path';
 import { CommonModule } from './common/common.module';
 import { SeedModule } from './seed/seed.module';
+import { EnvConfiguration } from './config/env.config';
 
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot({
+      load: [ EnvConfiguration ],
+    }),
+
     ServeStaticModule.forRoot({
       rootPath: join(__dirname,'..','public'),
     }),
@@ -24,7 +28,4 @@ import { SeedModule } from './seed/seed.module';
 })
 export class AppModule {
 
-  constructor(){
-    console.log(process.env)
-  }
 }
