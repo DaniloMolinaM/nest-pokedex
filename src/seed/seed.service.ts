@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import axios, { AxiosInstance } from 'axios';
-import { json } from 'stream/consumers';
 import { PokeResponse } from './interfaces/poke-response.interface';
 
 @Injectable()
