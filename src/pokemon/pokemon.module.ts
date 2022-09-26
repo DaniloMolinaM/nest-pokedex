@@ -16,6 +16,9 @@ import { ConfigModule } from '@nestjs/config';
         schema: PokemonSchema,
       }
     ])
+  ], 
+  exports: [
+    MongooseModule
   ]
 })
 
